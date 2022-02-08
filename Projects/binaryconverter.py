@@ -5,11 +5,26 @@ for digit in user_data :
 dot_index = empty_list.index('.')
 pre_dot_number = empty_list[: dot_index]
 post_dot_number = empty_list[(dot_index + 1):]
-pre_decimal_total = 0
-while dot_index >= 0:
+pre_dot_index = len(pre_dot_number) - 1
+pre_decimal_total = 0 
+
+
+while pre_dot_index >= 0:
+
     for element in pre_dot_number:
-        current_number = ((2**(dot_index))*int(element))
+        current_number = ((2**(pre_dot_index))* int(element))
         pre_decimal_total = pre_decimal_total + current_number
-        dot_index = dot_index - 1
-print(pre_decimal_total)
+        pre_dot_index = pre_dot_index - 1
+
+
+post_decimal_index = -1
+post_decimal_total = 0
+for post_element in post_dot_number:
+    current_post_decimal_total = ((2**(post_decimal_index))* int(post_element))
+    post_decimal_total = current_post_decimal_total + post_decimal_total
+    post_decimal_index = post_decimal_index - 1
+
+total = pre_decimal_total + post_decimal_total
+print('Your total is ' + str(total))
+
 
