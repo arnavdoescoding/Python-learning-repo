@@ -10,5 +10,6 @@ while dot_index >= 0:
     for element in pre_dot_number:
         current_number = ((2**(dot_index))*int(element))
         pre_decimal_total = pre_decimal_total + current_number
+        dot_index = dot_index - 1
 print(pre_decimal_total)
 
