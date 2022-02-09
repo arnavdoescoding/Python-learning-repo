@@ -7,9 +7,11 @@ Command List -
 
 import sys 
 import pyttsx3
-user_text = input('Enter text: ')
+
 text_initialize = pyttsx3.init()
 while True :
+    user_text = input('Enter text: ')
+
     if user_text == 'GOOD MORNING' :
         final_text = '''Hello User. My name is Jarvis. I was named after Tony Stark's voice assistant because my owner is very lazy.
         How may I help you?'''
