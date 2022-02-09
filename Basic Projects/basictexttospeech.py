@@ -57,7 +57,7 @@ Lord Tywin said nothing. Mace Tyrell nodded. Prince Oberyn looked mildly disappo
         text_initialize.say(final_text)
         text_initialize.runAndWait()
         text_initialize.exit()
-        break
+        
     else :
         final_text = user_text
         text_initialize.say(final_text)
