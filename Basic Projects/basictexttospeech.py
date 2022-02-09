@@ -9,6 +9,7 @@ import sys
 import pyttsx3
 
 text_initialize = pyttsx3.init()
+text_initialize.setProperty("rate", 150)
 while True :
     user_text = input('Enter text: ')
 
