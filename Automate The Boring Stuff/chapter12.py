@@ -1,7 +1,6 @@
-import requests 
-url = 'https://automatetheboringstuff.com/files/rj.txt'
+import requests , bs4 
+url = 'https://www.jimcornette.com/'
 res = requests.get(url)
-new_file = open('Romeo and Juliet.txt', 'wb')
-for chunk in res.iter_content(100000):
-    new_file.write(chunk)
-new_file.close()
+example_soup = bs4.BeautifulSoup(res.text, 'lxml')
+elems = example_soup.select('#js-SFNT > header > section')
+print(elems[0].getText())
