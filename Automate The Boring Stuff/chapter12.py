@@ -1,6 +1,7 @@
 import requests 
 url = 'https://automatetheboringstuff.com/files/rj.txt'
 res = requests.get(url)
-len_text = len(res.text)
-print(len_text)
-print(res.text[: 2000 ])
+new_file = open('Romeo and Juliet.txt', 'wb')
+for chunk in res.iter_content(100000):
+    new_file.write(chunk)
+new_file.close()
