@@ -1,4 +1,5 @@
+from sys import breakpointhook
 from selenium import webdriver
+driver = webdriver.Firefox()
 
-browser = webdriver.Firefox()
-type(browser)
+driver.get('https://www.wikipedia.org/')
