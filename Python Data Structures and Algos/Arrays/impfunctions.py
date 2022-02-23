@@ -37,6 +37,7 @@ print(new_array.buffer_info())
 # 9.count function 
 print(new_array.count(5))
 new_array.append(5)
+
 new_array.append(5)
 print(new_array.count(5))
 
