@@ -1,2 +1,2 @@
-import sys
-print(sys.argv)
+string = '''The most common issues that I observed in the purchasing pattern of the consumers was the lack of a tailor made service for consumers to recommend cars to them according to their needs. This led to consumers either overspending on car accessories they did not need or underspending on products like investing in good tyres, despite needing them due to their high weekly usage.'''
+print(len(string))
