@@ -1,2 +1,15 @@
-string = '''The most common issues that I observed in the purchasing pattern of the consumers was the lack of a tailor made service for consumers to recommend cars to them according to their needs. This led to consumers either overspending on car accessories they did not need or underspending on products like investing in good tyres, despite needing them due to their high weekly usage.'''
-print(len(string))
+import json
+import requests
+
+address = input('Enter the address: ')
+api_key = 'AIzaSy___IDByT70'
+base_url = 'http://py4e-data.dr-chuck.net/json?'
+
+params =  { 
+          'key' : api_key,
+          'address' : address}
+
+request = requests.get(base_url , params= params).json()
+request.keys()
+
+print(request)
