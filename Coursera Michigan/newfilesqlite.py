@@ -2,25 +2,22 @@ import sqlite3
 conn = sqlite3.connect('assignment.sqlite')
 cursor = conn.cursor()
 cursor.execute('DROP TABLE IF EXISTS Counts')
-cursor.execute('CREATE TABLE Counts (email TEXT , count INTEGER)')
+cursor.execute('CREATE TABLE Counts (org TEXT , count INTEGER)')
 
-fname = 'mbox.txt'
+fname = 'output.txt'
 fhand = open(fname)
-for line in fhand:
-    if not line.startswith('From '):
-        continue
-    pieces = line.split()
-    email = pieces[1]
-    cursor.execute('SELECT count FROM Counts WHERE email = ? ', (email , ))
+for org in fhand:
+    cursor.execute('SELECT count FROM Counts WHERE org = ? ', (org , ))
     row = cursor.fetchone()
     if row is None:
-        cursor.execute('INSERT INTO Counts (email , count) VALUES(? , 1)', (email, ))
+        cursor.execute('INSERT INTO Counts (org , count) VALUES(? , 1)', (org, ))
+        conn.commit()
     else:
-        cursor.execute('UPDATE Counts SET count = count + 1 WHERE email = ?', (email, ))
-    conn.commit()
+        cursor.execute('UPDATE Counts SET count = count + 1 WHERE org = ?', (org, ))
+        conn.commit()
 
-sqlstr = 'SELECT email , count FROM Counts ORDER BY count DISC LIMIT 10'
+sqlstr = 'SELECT org , count FROM Counts ORDER BY count DESC LIMIT 10'
 for row in cursor.execute(sqlstr):
-    print(str(row[0] , row[1]))
+    print(str(row[0]) , row[1])
 
 cursor.close()
