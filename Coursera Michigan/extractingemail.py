@@ -5,7 +5,7 @@ fhand = open(filename)
 new_file = open('output.txt', 'w')
 for line in fhand:
     line = line.rstrip()
-    lst = re.findall('.+rom(.+@[\w\.-]+(?:\.[\w]+)+)', line)
+    lst = re.findall('From: (.+@[\w\.-]+(?:\.[\w]+)+)', line)
     for item in lst:
         string = item[1:] + '\n'
         index = string.find('@')
