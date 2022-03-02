@@ -1,10 +1,10 @@
-import wikipediaapi
-import requests
-import  json
+#variable swappig 
 
+x = input('Enter the value of x: ')
+y = input('Enter the value of y: ')
 
-wiki = wikipediaapi.Wikipedia('en')
-search_term = input('Enter the search term:')
-page = wiki.page(search_term)
+def variable_swapper(a , b):
+    print('New value of x is:', b)
+    print('New value of y is:', a)
 
-print(page.text)
+variable_swapper(x , y)
