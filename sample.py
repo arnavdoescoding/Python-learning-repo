@@ -1,10 +1,13 @@
-#variable swappig 
+#basic if, else and elif loops
 
-x = input('Enter the value of x: ')
-y = input('Enter the value of y: ')
+numerator = float(input('Enter the divisor: '))
+denominator = float(input('Enter the dividend: '))
 
-def variable_swapper(a , b):
-    print('New value of x is:', b)
-    print('New value of y is:', a)
+def divide_by (n , d):
+    if d == float(0):
+        print('Sorry, but your dividend cannot be 0')
+    else:
+        number = n/d
+        return number
 
-variable_swapper(x , y)
+print(divide_by(numerator , denominator))
