@@ -19,7 +19,7 @@ while True:
 
         page = wiki.page(search_term)
 
-        voice_text = wiki.page(page.summary[:200])
+        voice_text = wiki.page(page.summary())
         text_initialize.say(voice_text)
         text_initialize.runAndWait()
 
