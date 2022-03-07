@@ -7,7 +7,6 @@ new_counter_underhs = 0
 new_counter_hs = 0
 new_counter_incoll = 0
 new_counter_coll = 0
-
 def proportion(filename):
     df = pd.read_csv(filename)
 
