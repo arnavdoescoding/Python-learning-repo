@@ -17,9 +17,8 @@ name_list = name_series.values
 reign_list = reign_series.values
 day_list = days_series.values
 
-plt.plot(day_list ,reign_list)
-plt.title('WWF WORLD HEAVYWEIGHT CHAMPIONS')
-plt.ylabel('Reign Number')
-plt.xlabel('No. Of Days')
-plt.tight_layout()
-plt.show()
+count = len(day_list)
+total = day_list.sum()
+avg = total / count
+
+print(avg)
