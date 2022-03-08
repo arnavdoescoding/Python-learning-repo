@@ -1,16 +1,23 @@
 from cProfile import label
-from matplotlib import pyplot as pyp
+from matplotlib import pyplot as plt
 
-dev_x =[ 1 ,2 ,3, 4, 5, 6, 7]
-dev_y = [23, 31, 52, 12, 10 , 11 , 2]
-dev_z = [100 , 2, 23, 45, 12 , 91 , 0]
-pyp.plot(dev_x , dev_y , label= 'All Devs')
-pyp.plot(dev_x , dev_z  , label= 'Python')
-pyp.title('First Matplot(1)')
-pyp.xlabel('X-Axis')
-pyp.ylabel('Y-Axis')
-pyp.legend()
-pyp.tight_layout()
-pyp.grid(True)
-pyp.show()
-pyp.savefig('sample.png')
+
+x_list = list()
+y_list = list()
+for x in range(-1000 , 1000):
+    x_list.append(x)
+    y = (3/5*(x**2/3)) - (((1 - (x**2))**1/2)/2)
+    y_list.append(y)
+
+plt.plot(x_list , y_list)
+plt.xlabel('Vaish')
+plt.ylabel('Arnav')
+plt.title('I LOVE YOU!!')
+
+plt.show()
+
+
+
+
+
+
