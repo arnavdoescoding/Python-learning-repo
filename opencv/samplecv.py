@@ -2,6 +2,8 @@ from cv2 import imshow
 import numpy as np
 import cv2 as cv
 
+# Creating the shape to be analyzed
+
 image = cv.imread('C:/Users/DELL/Desktop/Sample.png')
 gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
 
