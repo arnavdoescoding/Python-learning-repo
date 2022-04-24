@@ -15,13 +15,13 @@ image[thresh == 255] = 0
 kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE, (5, 5))
 erosion = cv.erode(image, kernel, iterations = 1)
 
-#cv.imshow('E', erosion)
+cv.imshow('E', erosion)
 new_image = cv.cvtColor(erosion , cv.COLOR_BGR2HSV) #We convert our image to hsv because BGR images are influenced by light falling , hue , saturation
 lower_red = np.array([0, 0 , 0])
 high_red = np.array([0 , 138, 255])
 mask = cv.inRange(erosion, lower_red, high_red)
 masked_image = cv.bitwise_and(erosion,erosion, mask=mask)
-#cv.imshow('masked_data', masked_image)
+cv.imshow('masked_data', masked_image)
 counter = 0
 total = 0
 data_array = np.asarray(masked_image)
