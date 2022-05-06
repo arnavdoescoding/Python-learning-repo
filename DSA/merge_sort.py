@@ -1,48 +1,37 @@
-import numpy as np
+def merging(inpa):
+    size = len(inpa)
+    if size > 1:
+        mid = size // 2
+        lef = inpa[:mid]
+        rig = inpa[mid:]
 
-
-def merge(inp_arr):
-    size = len(inp_arr)
-    if size > 1 :
-        midpt = size // 2
-        left_arr = inp_arr[: midpt]
-        right_arr = inp_arr[midpt:]
-
-        merge(left_arr)
-        merge(right_arr)
-
+        merging(lef)
+        merging(rig)
         p = 0
         q = 0
-        r = 0 
-
-        left_size = len(left_arr)
-        right_size = len(right_arr)
-
-        while p < left_size and q < right_size:
-            if left_arr[p] < right_arr[q]:
-                inp_arr[r] = left_arr[p]
-                p +=1
+        r = 0
+        lefts = len(lef)
+        rigs = len(rig)
+        while p < lefts and q < rigs:
+            if lef[p] < rig[q]:
+                inpa[r] = lef[p]
+                p+=1
             else:
-                inp_arr[r] = right_arr[q]
+                inpa[r] = rig[q]
                 q+=1
-
-            r=+1
-
-        while p < left_size:
-            inp_arr[r] = left_arr[p]
+            r+=1 
+        while p< lefts:
+            inpa[r] = lef[p]
             p+=1
             r+=1
-
-        while q < right_size:
-            inp_arr[r] = right_arr[q]
+        while q< rigs:
+            inpa[r] = rig[q]
             q+=1
             r+=1
 
 
-
-inp = [4, 1, 6 , 7 , 9, 11, 0, 13]
-
-merge(inp)
+inp = [23, 1 , 45 , 2 , 0]
+merging(inp)
 print(inp)
 
 
