@@ -7,9 +7,9 @@ with smtplib.SMTP('smtp.gmail.com', 587) as smtp: #Connecting to the mail browse
 
     smtp.login('arnavsample@gmail.com', 'password1604')
 
-    subject = 'You were caught overspeeding!'
-    body = 'Your speed was 125kmph'
+    subject = 'Hi babes!'
+    body = 'Its me Arnav'
 
     message = 'Subject: ' + subject + '\n\n' + 'body: '+ body
-    smtp.sendmail('arnavsample@gmail.com','arnavsample@gmail.com', message )
+    smtp.sendmail('arnavsample@gmail.com','nikhileshkumar225@gmail.com', message )
     print('Thanks')

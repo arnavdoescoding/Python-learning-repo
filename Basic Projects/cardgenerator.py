@@ -1,4 +1,4 @@
-from playingcards import Deck , Card
+from playcardsrds import Deck , Card
 import random 
 
 while True:
